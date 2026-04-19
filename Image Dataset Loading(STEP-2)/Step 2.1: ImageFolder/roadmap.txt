@@ -1,0 +1,19 @@
+Deep Learning model can't take any image directly
+👉 image → tensor → model
+
+So pipeline:
+
+Image Folder → Transform → Tensor → DataLoader → Model
+
+The directory will be:
+data/
+ └── PlantVillage/
+      ├── Tomato_healthy/
+      │     ├── img1.jpg
+      │     ├── img2.jpg
+      │
+      ├── Tomato_diseased/
+      │     ├── img3.jpg
+      │     ├── img4.jpg
+
+    
