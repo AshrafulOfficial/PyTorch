@@ -7,3 +7,4 @@ import torch
 
 t = torch.rand(2,3)
 print(t)
+print(t.shape)
