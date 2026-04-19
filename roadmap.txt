@@ -1,0 +1,23 @@
+🚀 NEXT: PyTorch Roadmap
+
+আমরা ৫টা step এ PyTorch শিখবো:
+
+🧩 Step 1: Tensor (number → AI data)
+
+👉 Tensor = advanced array (NumPy এর মতো)
+
+🧩 Step 2: Dataset Load
+
+👉 image load করা (PlantVillage style)
+
+🧩 Step 3: Model Load
+
+👉 MobileNetV2 load করা
+
+🧩 Step 4: Training
+
+👉 model train করা
+
+🧩 Step 5: Evaluation
+
+👉 accuracy বের করা
