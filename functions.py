@@ -8,4 +8,7 @@ print(a)
 print(b)
 print(c)
 
-print(a + b)
+x = a + b
+print(x)
+print(x + c)
+
