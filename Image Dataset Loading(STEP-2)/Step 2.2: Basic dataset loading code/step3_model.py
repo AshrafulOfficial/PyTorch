@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+#from load_dataset import num_classes
 
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes):
@@ -36,9 +37,9 @@ class SimpleCNN(nn.Module):
 
         return x
 
-if __name__ == "__main__":
-    model = SimpleCNN(num_classes = 10)
-    x = torch.randn(4, 3, 224, 224)
-    output = model(x)
-    print("Final output shape:", output.shape)
+#if __name__ == "__main__":
+ #   model = SimpleCNN(num_classes)
+  #  x = torch.randn(4, 3, 224, 224)
+  #  output = model(x)
+  #  print("Final output shape:", output.shape)
 

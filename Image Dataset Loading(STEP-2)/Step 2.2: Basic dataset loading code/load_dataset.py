@@ -30,6 +30,8 @@ dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 # -------------------------------
 # 4. Basic info print
 # -------------------------------
+class_names = dataset.classes
+num_classes = len(dataset.classes)
 print("Dataset path exists:", os.path.exists(data_dir))
 print("Classes:", dataset.classes)
 print("Class to index:", dataset.class_to_idx)
