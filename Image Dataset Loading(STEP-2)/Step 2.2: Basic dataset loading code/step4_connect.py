@@ -7,11 +7,11 @@ model = SimpleCNN(num_classes=num_classes)
 
 # train_loader থেকে 1 batch নাও
 for images, labels in train_loader:
-    print("Real images shape:", images.shape)
-    print("Real labels:", labels)
+#    print("Real images shape:", images.shape)
+#    print("Real labels:", labels)
 
     # images-ই এখন x
     outputs = model(images)
 
-    print("Model output shape:", outputs.shape)
+#    print("Model output shape:", outputs.shape)
     break

@@ -12,28 +12,29 @@ class SimpleCNN(nn.Module):
         self.flatten = nn.Flatten()
         self.fc = nn.Linear(32*56*56, num_classes)
 
+#unnecessary learn houar somoy jaate print na hoy, tai print ghulo comment kore dicchi
     def forward(self, x):
-        print("Input Shape:", x.shape)
+#        print("Input Shape:", x.shape)
         x = self.conv1(x)
 
-        print("After Conv1:", x.shape)
+#        print("After Conv1:", x.shape)
         x = self.relu(x)
         x = self.pool(x)
 
-        print("After Pool1:", x.shape)
+#        print("After Pool1:", x.shape)
         x = self.conv2(x)
 
-        print("After Conv2:", x.shape)
+#        print("After Conv2:", x.shape)
         x = self.relu(x)
         x = self.pool(x)
 
-        print("After pool2:", x.shape)
+#        print("After pool2:", x.shape)
         x = self.flatten(x)
 
-        print("After flatten:", x.shape)
+#        print("After flatten:", x.shape)
         x = self.fc(x)
 
-        print("After fc:", x.shape)
+#        print("After fc:", x.shape)
 
         return x
 

@@ -1,0 +1,73 @@
+এটা কী করছে?
+
+চলো একদম সহজভাবে বুঝি।
+
+1) Model create
+model = SimpleCNN(num_classes=num_classes)
+
+এখানে তোমার CNN model বানানো হচ্ছে।
+
+2) Loss function
+criterion = nn.CrossEntropyLoss()
+
+এটা model-এর prediction আর true label compare করে।
+
+সহজভাবে:
+
+prediction ঠিক হলে loss কম
+prediction ভুল হলে loss বেশি
+3) Optimizer
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+এটা model-এর weights update করে।
+
+lr=0.001 = learning rate
+মানে model কত speed-এ শিখবে।
+
+4) Epoch
+num_epochs = 5
+
+মানে পুরো training data model 5 বার দেখবে।
+
+5) Batch loop
+for images, labels in train_loader:
+
+এখানে train_loader থেকে real image আর label আসছে।
+
+6) Forward pass
+outputs = model(images)
+
+এখানে model prediction দিচ্ছে।
+
+7) Loss calculate
+loss = criterion(outputs, labels)
+
+এখানে measure হচ্ছে model কতটা ভুল করেছে।
+
+8) Gradient clear
+optimizer.zero_grad()
+
+আগের batch-এর gradient মুছে ফেলা হচ্ছে।
+
+9) Backward pass
+loss.backward()
+
+এখানেই model বুঝে কোথায় ভুল হয়েছে।
+
+10) Update
+optimizer.step()
+
+এখানে weights update হয়।
+
+এই line-টাই learning-এর main part।
+
+খুব important
+
+তোমার step3_model.py-তে এখন অনেক print() আছে:
+
+print("Input Shape:", x.shape)
+print("After Conv1:", x.shape)
+...
+
+এগুলো training-এর সময় অনেক বেশি output দিবে।
+তাই এখন training-এর জন্য এগুলো comment out করে দাও।

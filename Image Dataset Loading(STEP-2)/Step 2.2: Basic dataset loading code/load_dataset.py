@@ -28,14 +28,10 @@ transform = transforms.Compose([
 dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 
 # -------------------------------
-# 4. Basic info print
+# 4. Basic info
 # -------------------------------
 class_names = dataset.classes
 num_classes = len(dataset.classes)
-print("Dataset path exists:", os.path.exists(data_dir))
-print("Classes:", dataset.classes)
-print("Class to index:", dataset.class_to_idx)
-print("Total images:", len(dataset))
 
 # -------------------------------
 # 5. Train / Validation split
@@ -45,9 +41,6 @@ val_size = len(dataset) - train_size   # remaining validation
 
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 
-print("\nTrain size:", len(train_dataset))
-print("Validation size:", len(val_dataset))
-
 # -------------------------------
 # 6. DataLoader (batch তৈরি)
 # -------------------------------
@@ -55,19 +48,34 @@ train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=4, shuffle=False)
 
 # -------------------------------
-# 7. Train loader থেকে 1টা batch test
+# 7. Run this part only when file is executed directly
 # -------------------------------
-for images, labels in train_loader:
-    print("\n--- Train Batch ---")
-    print("Image shape:", images.shape)
-    print("Labels:", labels)
-    break
+if __name__ == "__main__":
+    # -------------------------------
+    # Basic info print
+    # -------------------------------
+    print("Dataset path exists:", os.path.exists(data_dir))
+    print("Classes:", dataset.classes)
+    print("Class to index:", dataset.class_to_idx)
+    print("Total images:", len(dataset))
 
-# -------------------------------
-# 8. Validation loader থেকে 1টা batch test
-# -------------------------------
-for images, labels in val_loader:
-    print("\n--- Validation Batch ---")
-    print("Image shape:", images.shape)
-    print("Labels:", labels)
-    break
+    print("\nTrain size:", len(train_dataset))
+    print("Validation size:", len(val_dataset))
+
+    # -------------------------------
+    # 8. Train loader থেকে 1টা batch test
+    # -------------------------------
+    for images, labels in train_loader:
+        print("\n--- Train Batch ---")
+        print("Image shape:", images.shape)
+        print("Labels:", labels)
+        break
+
+    # -------------------------------
+    # 9. Validation loader থেকে 1টা batch test
+    # -------------------------------
+    for images, labels in val_loader:
+        print("\n--- Validation Batch ---")
+        print("Image shape:", images.shape)
+        print("Labels:", labels)
+        break
